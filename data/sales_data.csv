@@ -1,0 +1,16 @@
+date,product,category,region,quantity,unit_price,revenue,sales_rep
+2026-01-05,CRM Setup,Software,Nairobi,1,45000,45000,Alice
+2026-01-12,n8n Automation,Automation,Mombasa,2,25000,50000,Bob
+2026-01-18,AI Chatbot,AI,Nairobi,1,80000,80000,Alice
+2026-02-03,CRM Setup,Software,Kisumu,1,45000,45000,Carol
+2026-02-14,Data Pipeline,Automation,Nairobi,1,60000,60000,Alice
+2026-02-22,AI Chatbot,AI,Mombasa,1,80000,80000,Bob
+2026-03-01,n8n Automation,Automation,Nairobi,3,25000,75000,Alice
+2026-03-10,RAG System,AI,Kisumu,1,95000,95000,Carol
+2026-03-15,CRM Setup,Software,Mombasa,2,45000,90000,Bob
+2026-03-28,Data Pipeline,Automation,Nairobi,1,60000,60000,Carol
+2026-04-05,AI Chatbot,AI,Nairobi,2,80000,160000,Alice
+2026-04-12,RAG System,AI,Mombasa,1,95000,95000,Bob
+2026-04-20,n8n Automation,Automation,Kisumu,2,25000,50000,Carol
+2026-05-02,CRM Setup,Software,Nairobi,1,45000,45000,Alice
+2026-05-10,RAG System,AI,Nairobi,1,95000,95000,Bob
