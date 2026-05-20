@@ -17,6 +17,7 @@ REPORTS_DIR = Path(__file__).parent / "reports"
 REPORTS_DIR.mkdir(exist_ok=True)
 
 
+# Reads the CSV file into a Pandas DataFrame, removes missing values and duplicates, converts date strings to date objects, and ensures revenue is numeric — making messy real-world data usable
 def load_and_clean(filepath: str) -> pd.DataFrame:
     print(f"  Loading data from: {filepath}")
     df = pd.read_csv(filepath)
@@ -30,6 +31,7 @@ def load_and_clean(filepath: str) -> pd.DataFrame:
     return df
 
 
+# Takes the cleaned DataFrame and computes all key business metrics — total revenue, average deal size, breakdowns by region, category, sales rep, and month, plus top performers in each group
 def compute_metrics(df: pd.DataFrame) -> dict:
     total_revenue = float(df["revenue"].sum())
     total_sales = int(len(df))
@@ -71,6 +73,7 @@ def compute_metrics(df: pd.DataFrame) -> dict:
     }
 
 
+# Sends the computed metrics to Claude as structured JSON and receives a written business insight report with executive summary, breakdowns, key findings, and recommended actions
 def generate_analysis(metrics: dict) -> str:
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -100,6 +103,7 @@ Sales Data Metrics:
     return message.content[0].text
 
 
+# Orchestrates the full pipeline — load and clean the CSV, compute metrics, generate AI analysis, save the full report as a timestamped .txt file, and return all results
 def run_pipeline(data_file: str = "sales_data.csv") -> dict:
     filepath = DATA_DIR / data_file
     print(f"\nRunning pipeline on: {filepath}")
